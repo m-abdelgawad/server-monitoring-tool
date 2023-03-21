@@ -1,0 +1,6 @@
+INSERT INTO cpu_stats  (
+    created,
+    freq_ghz,
+    usage_percentage
+)
+VALUES (timestamp %s, %s, %s)

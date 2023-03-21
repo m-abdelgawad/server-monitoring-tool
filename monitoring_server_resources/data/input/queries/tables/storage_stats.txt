@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS storage_stats  (
+    created TIMESTAMP PRIMARY KEY,
+    total_storage_gb NUMERIC,
+    used_storage_gb NUMERIC,
+    free_storage_gb NUMERIC,
+    storage_usage_percent NUMERIC,
+    partitions_count INTEGER,
+    partitions_list VARCHAR
+);

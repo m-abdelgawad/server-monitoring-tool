@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS system_profile  (
+    created TIMESTAMP PRIMARY KEY,
+    os VARCHAR,
+    system_name VARCHAR,
+    os_release VARCHAR,
+    os_version VARCHAR,
+    processor_arch VARCHAR,
+    processor_type VARCHAR,
+    physical_cores NUMERIC,
+    logical_cores NUMERIC
+);

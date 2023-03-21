@@ -1,0 +1,12 @@
+INSERT INTO system_profile  (
+    created,
+    os,
+    system_name,
+    os_release,
+    os_version,
+    processor_arch,
+    processor_type,
+    physical_cores,
+    logical_cores
+)
+VALUES (timestamp %s, %s, %s, %s, %s, %s, %s, %s, %s)

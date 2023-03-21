@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS cpu_stats  (
+    created TIMESTAMP PRIMARY KEY,
+    freq_ghz NUMERIC,
+    usage_percentage NUMERIC
+);

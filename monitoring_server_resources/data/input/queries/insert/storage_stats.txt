@@ -1,0 +1,10 @@
+INSERT INTO storage_stats  (
+    created,
+    total_storage_gb,
+    used_storage_gb,
+    free_storage_gb,
+    storage_usage_percent,
+    partitions_count,
+    partitions_list
+)
+VALUES (timestamp %s, %s, %s, %s, %s, %s, %s)

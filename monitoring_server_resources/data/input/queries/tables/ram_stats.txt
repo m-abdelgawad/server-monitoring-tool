@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS ram_stats  (
+    created TIMESTAMP PRIMARY KEY,
+    total_ram_gb NUMERIC,
+    free_ram_gb NUMERIC,
+    used_ram_gb NUMERIC,
+    ram_usage_percent NUMERIC,
+    total_swap_gb NUMERIC,
+    free_swap_gb NUMERIC,
+    used_swap_gb NUMERIC,
+    swap_usage_percent NUMERIC
+);

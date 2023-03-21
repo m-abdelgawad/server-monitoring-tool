@@ -1,0 +1,12 @@
+INSERT INTO ram_stats  (
+    created,
+    total_ram_gb,
+    free_ram_gb,
+    used_ram_gb,
+    ram_usage_percent,
+    total_swap_gb,
+    free_swap_gb,
+    used_swap_gb,
+    swap_usage_percent
+)
+VALUES (timestamp %s, %s, %s, %s, %s, %s, %s, %s, %s)

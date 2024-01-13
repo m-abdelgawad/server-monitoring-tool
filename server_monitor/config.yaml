@@ -1,0 +1,7 @@
+queries:
+  create_tables_paths: [
+    'data/input/queries/tables/system_profile.txt',
+    'data/input/queries/tables/cpu_stats.txt',
+    'data/input/queries/tables/ram_stats.txt',
+    'data/input/queries/tables/storage_stats.txt'
+  ]

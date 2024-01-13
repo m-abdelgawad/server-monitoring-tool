@@ -2,6 +2,7 @@ import os
 import yaml
 import json
 import traceback
+from dotenv import load_dotenv
 from packages.file import file
 from packages.logger import logger
 from packages.system import system
@@ -10,26 +11,28 @@ from packages.datetimetools import datetimetools
 
 
 # Initiate logger
-log = logger.get(app_name='logs', enable_logs_file=True)
+log = logger.get(app_name='logs', enable_logs_file=False)
+
+# Load environment variables from the specified file
+dotenv_path = '/server-monitor/env_vars.txt'
+load_dotenv(dotenv_path)
 
 
 def main():
 
     log.info('Start program execution')
-
     project_abs_path = file.caller_dir_path()
 
     # Import configurations
     config_path = os.path.join(project_abs_path, 'config.yaml')
     with open(config_path) as config_file:
         config = yaml.safe_load(config_file)
-
     # Create a database instance
     db = postgredb.PostgreSQLDB(
-        host=config['database']['host'],
-        db_name=config['database']['database_name'],
-        username=config['database']['username'],
-        password=config['database']['password']
+        host = os.getenv('DB_HOSTNAME'),
+        db_name = os.getenv('DB_NAME'),
+        username = os.getenv('DB_USERNAME'),
+        password = os.getenv('DB_PASSWORD')
     )
 
     log.info('start creating database\'s tables')
@@ -130,6 +133,10 @@ def main():
     log.info('start Storage stats stats')
 
     storage_stats_dict = system.get_disk_stats()
+    storage_stats_dict['total_storage_gb'] = storage_stats_dict['partitions_list'][0]['partition_total_gb']
+    storage_stats_dict['used_storage_gb'] = storage_stats_dict['partitions_list'][0]['partition_used_gb']
+    storage_stats_dict['free_storage_gb'] = storage_stats_dict['partitions_list'][0]['partition_free_gb']
+    storage_stats_dict['storage_usage_percent'] = storage_stats_dict['partitions_list'][0]['partition_percentage']
     log.info(storage_stats_dict)
 
     # Insert into the database
@@ -148,6 +155,7 @@ def main():
         json.dumps(storage_stats_dict['partitions_list']),
     ]
     log.info('start inserting Storage stats data into the database')
+
     db.insert(
         insert_query=storage_insert_query, values_list=storage_values_list
     )

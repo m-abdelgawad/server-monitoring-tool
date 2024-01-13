@@ -18,7 +18,7 @@
 <div align="center">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
 
-  <h3 align="center">Server Resources Monitor</h3>
+  <h3 align="center">Server Monitoring Tool</h3>
 
 </div>
 
@@ -57,7 +57,7 @@
 
 <img src="images/cover.jpg" alt="Cover Image">
 
-* Project Name: Server Resources Monitor
+* Project Name: Server Monitoring Tool
 * Version: v1.0.0
 
 ### Description

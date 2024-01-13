@@ -18,7 +18,7 @@
 <div align="center">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
 
-  <h3 align="center">Monitoring Server Resources</h3>
+  <h3 align="center">Server Resources Monitor</h3>
 
 </div>
 
@@ -57,16 +57,12 @@
 
 <img src="images/cover.jpg" alt="Cover Image">
 
-* Project Name: Monitoring Server Resources
+* Project Name: Server Resources Monitor
 * Version: v1.0.0
 
 ### Description
 
-Monitoring server resources continuously is like keeping a watchful 
-eye on the heartbeat of your online presence, ensuring its optimal 
-health and uninterrupted functionality. 
-
-So, I developed this project to monitor the resources on the server
+I developed this project to monitor the resources on the server
 where I am hosting my personal portfolio website: automagicdeveloper.com
 
 Here is the workflow of the project:
